@@ -1,18 +1,18 @@
-import React from 'react'
-import Navbar from './components/Navbar/NavbarComp'
-import MiddlebarComp from './components/Middlebar/MiddlebarComp'
-import SkeletonComp from './components/Skeleton/SkeletonComp'
-import Banner from './components/Hero/Banner'
+import React from 'react';
+import Landing from './pages/Landing';
+import CreateNFT from './pages/CreateNFT';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
 
 function App() {
   return (
-    <div className='relative bg-black'>
-      <Navbar/>
-      <Banner/>
-      <MiddlebarComp/>
-      <SkeletonComp/>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Landing/>}></Route>
+        <Route path='/create' element={<CreateNFT/>}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

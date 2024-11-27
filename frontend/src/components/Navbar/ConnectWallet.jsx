@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { FC, useMemo } from 'react';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
+import { UnsafeBurnerWalletAdapter } from '@solana/wallet-adapter-wallets';
+import {
+    WalletModalProvider,
+    WalletMultiButton,
+} from '@solana/wallet-adapter-react-ui';
+
+
+// Default styles that can be overridden by your app
+import '@solana/wallet-adapter-react-ui/styles.css';
 
 function ConnectWallet() {
   return (
-    <div className='hidden xl:flex bg-[rgb(112,207,233)] px-3 py-1 rounded-md font-bold text-sm justify-center items-center whitespace-nowrap' style = {{ 'word-spacing': '4px'}}>CONNECT WALLET</div>
+    <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
+      <WalletProvider wallets={[]} autoConnect>
+          <WalletModalProvider>
+            <WalletMultiButton className=''/>
+          </WalletModalProvider>
+      </WalletProvider>
+    </ConnectionProvider>
   )
 }
 

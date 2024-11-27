@@ -3,7 +3,7 @@ import ToggleButton from './ToggleButton';
 const Banner = () => {
   const[isCollapse,setCollapase] = useState(true);
   return (
-    <div className=" overflow-hidden">
+    <div className="">
 
     <div className={`h-[calc(100vh/2)] w-full ${isCollapse? "block" : "hidden"} `} >
       <div className="h-full w-full">
@@ -14,12 +14,12 @@ const Banner = () => {
         />
       </div>
     </div>
-      <h1 className="font-kode  text-center text-4xl text-white animate-pulse font-extrabold mt-4 leading-4 tracking-wider">
+      <h1 className="font-kode  text-center text-4xl text-white animate-pulse font-extrabold mt-10 px-4 leading-snug tracking-wider">
             Solana's Leading NFT Marketplace
       </h1>
 
       
-        <div className='flex flex-row text-white font-kode text-center items-center justify-center mt-5 gap-4'>
+        <div className='flex flex-row text-white font-kode text-center items-center justify-center mt-10 gap-4'>
             <p>CARDS</p>
             <ToggleButton/>
             <p>TABLE</p>
